@@ -29,5 +29,8 @@ Um garçom ao atender um cliente em uma mesa, pelo celular deverá abrir uma com
 *Segurança das informações cadastrais;<br />
 *Acesso por HTTPS;
 
+## - Diagrama de Caso de Uso.
+![DER do banco de dados](https://github.com/Marcoskisto/pedidoCerto-lab4-fatec/blob/master/CasoDeUso_PedidoCerto(Draw%20io).jpg)
+
 ## - DER do banco de dados.
 ![DER do banco de dados](https://github.com/Marcoskisto/pedidoCerto-lab4-fatec/blob/master/DER_PedidoCerto.jpg)
