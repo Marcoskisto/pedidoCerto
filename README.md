@@ -1,11 +1,11 @@
 # PROJETO LP4 FATEC - Pedido Certo
 ### Professor Fernando
-### Alunos: Gisele Lopes, Hamilton Roberto, Luís Henrique, Marcos Kisto 
-### Descrição: 
+#### Alunos: Gisele Lopes, Hamilton Roberto, Luís Henrique, Marcos Kisto 
+## Descrição: 
 Sistema de gerenciamento de comandas de restaurante. Tem a finalidade de suprir as necessidades mínimas de atendimento ao cliente em um restaurante.
 Um garçom ao atender um cliente em uma mesa, pelo celular deverá abrir uma comanda escolhendo o número da mesa no sistema. A partir daí, irá selecionar no sistema os pratos solicitados pelo cliente e a sua quantidade. Essas informações serão visualizadas pelos funcionários da cozinha que prepararão os pratos. Para fechar a comanda o sistema apresentará o valor total da Comanda que o cliente irá pagar. Depois de paga a comanda será encerrada pelo Garçom, que alterará seu Status de "Aberta" para "Fechada".
 
-### - Requisitos Funcionais
+## - Requisitos Funcionais
 * RF001 - Cadastro do usuário;</br>
 * RF002 - Alterar Usuários;</br>
 * RF003 - Excluir Usuários;</br>
