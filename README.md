@@ -1,7 +1,16 @@
-# PROJETO LP4 FATEC - Pedido Certo
+﻿# PROJETO LP4 FATEC - Pedido Certo
 #### Professor: ![Fernando Sales](https://github.com/fsclaro)
 
 #### Alunos: ![Gisele](https://github.com/giselen), ![Hamilton](https://github.com/camc21), ![Luís Henrique](https://github.com/luisborges06), ![MarcosKisto](https://github.com/marcoskisto)
+
+## Importando o Projeto
+1. git clone https://github.com/Marcoskisto/pedidoCerto.git
+2. cd pedidoCerto
+3. composer install
+4. php artisan key:generate
+5. Configurar o Banco mysql, user *"homestead"*, password *"secret"*
+5. php artisan migrate
+
 ## Descrição: 
 Sistema de gerenciamento de comandas de restaurante. Tem a finalidade de suprir as necessidades mínimas de atendimento ao cliente em um restaurante.
 Um garçom ao atender um cliente em uma mesa, pelo celular deverá abrir uma comanda escolhendo o número da mesa no sistema. A partir daí, irá selecionar no sistema os pratos solicitados pelo cliente e a sua quantidade. Essas informações serão visualizadas pelos funcionários da cozinha que prepararão os pratos. Para fechar a comanda o sistema apresentará o valor total da Comanda que o cliente irá pagar. Depois de paga a comanda será encerrada pelo Garçom, que alterará seu Status de "Aberta" para "Fechada".
@@ -29,6 +38,9 @@ Um garçom ao atender um cliente em uma mesa, pelo celular deverá abrir uma com
 * RNF005 - Limite de pedidos por mesa;</br>
 * RNF006 - Segurança das informações cadastrais;</br>
 * RNF007 - Acesso por HTTPS;
+* RNF008 - Banco de Dados MySql
+* RNF009 - Linguagem PHP
+* RNF010 - Framework Laravel 3.7
 
 ## - Diagrama de Caso de Uso.
 ![DER do banco de dados](https://github.com/Marcoskisto/pedidoCerto-lab4-fatec/blob/master/CasoDeUso_PedidoCerto(Draw%20io).jpg)
