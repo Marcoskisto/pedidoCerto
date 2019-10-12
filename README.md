@@ -8,8 +8,8 @@
 2. cd pedidoCerto
 3. composer install
 4. php artisan key:generate
-5. Configurar o Banco mysql, user *"homestead"*, password *"secret"*
-5. php artisan migrate
+5. criar o Banco "pedidocerto", com user -homestead- e password -secret-
+6. * php artisan migrate (migrations ainda não criadas)
 
 ## Descrição: 
 Sistema de gerenciamento de comandas de restaurante. Tem a finalidade de suprir as necessidades mínimas de atendimento ao cliente em um restaurante.
