@@ -1,5 +1,6 @@
 # PROJETO LP4 FATEC - Pedido Certo
-#### Professor Fernando
+#### ![Professor Fernando](https://github.com/fsclaro)
+
 #### Alunos: Gisele Lopes, Hamilton Roberto, Luís Henrique, Marcos Kisto 
 ## Descrição: 
 Sistema de gerenciamento de comandas de restaurante. Tem a finalidade de suprir as necessidades mínimas de atendimento ao cliente em um restaurante.
