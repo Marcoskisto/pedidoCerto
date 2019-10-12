@@ -6,18 +6,18 @@ Sistema de gerenciamento de comandas de restaurante. O sistema tem a finalidade 
 Um garçom ao atender um cliente em uma mesa, pelo celular deverá abrir uma comanda escolhendo o número da mesa no sistema. A partir daí, irá selecionar no sistema os pratos solicitados pelo cliente e a sua quantidade. Essas informações serão visualizadas pelos funcionários da cozinha que prepararão os pratos. Para fechar a comanda o sistema apresentará o valor total da Comanda que o cliente irá pagar. Depois de paga a comanda será encerrada pelo Garçom, que alterará seu Status de "Aberta" para "Fechada".
 
 ## - Requisitos Funcionais
-RF001 - Cadastro do usuário;
-RF002 - Alterar Usuários;
-RF003 - Excluir Usuários;
-RF004 - Efetuar Login;
-RF005 - Efetuar Logout;
-RF006 - Criação de Comandas;
-RF007 - Exibição das Comandas;
-RF008 - Inclusão e exclusão de Pedidos nas comandas;
-RF009 - Cadastrar Pratos;
-RF010 - Listar Pratos cadastrados;
-RF011 - Alterar Pratos;
-RF012 - Excluir Pratos;
+RF001 - Cadastro do usuário;</br>
+RF002 - Alterar Usuários;</br>
+RF003 - Excluir Usuários;</br>
+RF004 - Efetuar Login;</br>
+RF005 - Efetuar Logout;</br>
+RF006 - Criação de Comandas;</br>
+RF007 - Exibição das Comandas;</br>
+RF008 - Inclusão e exclusão de Pedidos nas comandas;</br>
+RF009 - Cadastrar Pratos;</br>
+RF010 - Listar Pratos cadastrados;</br>
+RF011 - Alterar Pratos;</br>
+RF012 - Excluir Pratos;</br>
 RF013 - Alterar Status das comandas.
 
 ## - Requisitos Não-Funcionais
