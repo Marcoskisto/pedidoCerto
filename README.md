@@ -21,12 +21,12 @@ RF012 - Excluir Pratos;</br>
 RF013 - Alterar Status das comandas.
 
 ## - Requisitos Não-Funcionais
-RNF001 – O sistema deverá ter uma quantidade máxima de usuários suportados;
-RNF002 - O sistema deverá ter uma quantidade máxima de mesas que poderão ser     cadastradas;
-RNF003 - Haverá um limite de pedidos que constarão na comanda;
-RNF004 - Deverá ter um tempo limite de uma sessão de usuário;
-RNF005 - Limite de pedidos por mesa;
-RNF006 - Segurança das informações cadastrais;
+RNF001 – O sistema deverá ter uma quantidade máxima de usuários suportados;</br>
+RNF002 - O sistema deverá ter uma quantidade máxima de mesas que poderão ser cadastradas;</br>
+RNF003 - Haverá um limite de pedidos que constarão na comanda;</br>
+RNF004 - Deverá ter um tempo limite de uma sessão de usuário;</br>
+RNF005 - Limite de pedidos por mesa;</br>
+RNF006 - Segurança das informações cadastrais;</br>
 RNF007 - Acesso por HTTPS;
 
 ## - Diagrama de Caso de Uso.
