@@ -43,10 +43,10 @@ Um garçom ao atender um cliente em uma mesa, pelo celular deverá abrir uma com
 * RNF010 - Framework Laravel 3.7
 
 ## - Diagrama de Caso de Uso.
-![DER do banco de dados](https://github.com/Marcoskisto/pedidoCerto-lab4-fatec/blob/master/CasoDeUso_PedidoCerto(Draw%20io).jpg)
+![DER do banco de dados](https://github.com/Marcoskisto/pedidoCerto-lab4-fatec/blob/master/Documentacoes/CasoDeUso_PedidoCerto(Draw%20io).jpg)
 
 ## - DER do banco de dados.
-![DER do banco de dados](https://github.com/Marcoskisto/pedidoCerto-lab4-fatec/blob/master/DER_PedidoCerto.jpg)
+![DER do banco de dados](https://github.com/Marcoskisto/pedidoCerto/blob/master/Documentacoes/DER_PedidoCerto.jpg)
 
 ## - Diagrama de Classes.
-![Diagrama de Classes](https://github.com/Marcoskisto/pedidoCerto-lab4-fatec/blob/master/ClassDiagram.jpg.png)
+![Diagrama de Classes](https://github.com/Marcoskisto/pedidoCerto-lab4-fatec/blob/master/Documentacoes/ClassDiagram.jpg.png)
