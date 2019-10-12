@@ -49,4 +49,4 @@ Um garçom ao atender um cliente em uma mesa, pelo celular deverá abrir uma com
 ![DER do banco de dados](https://github.com/Marcoskisto/pedidoCerto/blob/master/Documentacoes/DER_PedidoCerto.jpg)
 
 ## - Diagrama de Classes.
-![Diagrama de Classes](https://github.com/Marcoskisto/pedidoCerto-lab4-fatec/blob/master/Documentacoes/ClassDiagram.jpg.png)
+![Diagrama de Classes](https://github.com/Marcoskisto/pedidoCerto/blob/master/Documentacoes/ClassDiagram.png)
