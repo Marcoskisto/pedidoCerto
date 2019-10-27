@@ -38,8 +38,6 @@
                         <a href="#" class="btn"><i class="fa fa-edit"></i></a></td>
                     </tr>
                     @endforeach
-
-
                 </tbody>
             </table>
         </div>
