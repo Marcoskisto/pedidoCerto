@@ -70,7 +70,7 @@
             <div class="content">
 
                 <div class="title m-b-md" >
-                    Pedido Certo
+                   Pedido Certo
                 </div>
             @if (Route::has('login'))
                 <div class="botton-right links">

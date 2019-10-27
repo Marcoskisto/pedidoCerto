@@ -29,13 +29,17 @@
                 <tbody>
                     @foreach($itens as $item)
                     <tr>
-                        <td>item->id</td>
-                        <td>item->nome</td>
-                        <td>item->descricao</td>
-                        <td>item->preco</td>
-
+                        <td>{{$item->id}}</td>
+                        <td>{{$item->titulo_prato}}</td>
+                        <td>{{$item->desc_prato}}</td>
+                        <td>{{$item->preco}}</td>
+                        <td>
+                        <a href="#" class="btn"><i class="far                fa-trash-alt"></i></a>
+                        <a href="#" class="btn"><i class="fa fa-edit"></i></a></td>
                     </tr>
                     @endforeach
+
+
                 </tbody>
             </table>
         </div>
