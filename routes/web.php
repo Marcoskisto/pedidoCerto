@@ -22,3 +22,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/item', 'ItemController@index')->name('item.index');
 
 Route::get('/item/create', 'ItemController@create')->name('item.create');
+
+Route::get('/item/store', 'ItemController@store')->name('item.store');

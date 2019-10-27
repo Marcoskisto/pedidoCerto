@@ -36,7 +36,12 @@ class ItemController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       $service= Service::create([
+            "titulo_prato"=>$request->titulo_prato,
+            "desc_prato"=>$request->desc_prato,
+            "preco"=>$request->preco,
+       ]);
+       $service->save();
     }
 
     /**

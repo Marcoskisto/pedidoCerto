@@ -17,7 +17,7 @@
         </div>
 
         <div class="panel-body">
-            <table class="table table-striped table bordered table-hover">
+            <table class="table table-striped table bordered table-hover" >
                 <thead>
                     <tr>
                         <td>ID</<td>
@@ -37,7 +37,31 @@
                         <a href="#" class="btn"><i class="far                fa-trash-alt"></i></a>
                         <a href="#" class="btn"><i class="fa fa-edit"></i></a></td>
                     </tr>
+
                     @endforeach
+
+                    <form action="/item/store" method="post">
+                         {{ csrf_field() }}
+                        <tr>
+                            <td></td>
+                            <td>
+                                <input type="text" name="titulo_prato" class="form-control">
+                            </td>
+                            <td>
+                                <input type="text" name="desc_prato" class="form-control">
+                            </td>
+                            <td>
+                                <input type="text" name="preco" class="form-control">
+                            </td>
+                            <td>
+                                <button type="submit" class="btn btn-primary btn-block btn-flat">
+                                   INCLUIR
+                                </button>
+                            </td>
+                        </tr>
+
+
+                    </form>
                 </tbody>
             </table>
         </div>

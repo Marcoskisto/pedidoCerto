@@ -7,7 +7,7 @@
 @stop
 
 @section('content')
-   {!! Form::open(['action' => 'ItemController@store', 'method' => 'POST']) !!}
+   {!! Form::open([ 'method' => 'POST']) !!}
 
     {!! Form::close() !!}
 @stop
