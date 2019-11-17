@@ -143,22 +143,10 @@ return [
             'url'  => 'admin/settings',
             'icon' => 'fas fa-fw fa-lock',
         ],
-         [
-            'text' => '  Cardápio',
-            'icon' => 'fas fa-book-open',
-            'submenu'=> [
-                [
-                    'text' => 'Listar Cardápio',
-                    'icon' => 'fa fa-th-list',
-                    'route' => 'item.index'
-                ],
-                [
-                    'text' => 'Incluir Item',
-                    'icon' => 'fa fa-plus-square',
-                    'url' => '#'
-                ],
-            ]
-
+        [
+                'text' => 'Cardápio',
+                'icon' => 'fas fa-book-open',
+                'route' => 'item.index'
         ],
         ['header' => 'labels'],
         [

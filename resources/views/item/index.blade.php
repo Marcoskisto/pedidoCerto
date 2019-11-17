@@ -11,8 +11,8 @@
         <div class="panel-heading clearfix">
             Relacao dos Pratos e Bebidas
             <div class="pull-right">
-                <a href="#" class="btn btn-info"><i class="fas fa-sync"></i> Atualizar a tela</a>
-                <a href="#" class="btn btn-success"><i class="fas fa-plus"></i> Inserir um Novo Item</a>
+                <a href="{{ route('item.index') }}" class="btn btn-info"><i class="fas fa-sync"></i> Atualizar a tela</a>
+                <a href="{{ route('item.create') }}" class="btn btn-success"><i class="fas fa-plus"></i> Inserir um Novo Item</a>
             </div>
         </div>
 
@@ -33,40 +33,51 @@
                         <td>{{$item->titulo_prato}}</td>
                         <td>{{$item->desc_prato}}</td>
                         <td>{{$item->preco}}</td>
-                        <td>
-                        <a href="#" class="btn"><i class="far                fa-trash-alt"></i></a>
-                        <a href="#" class="btn"><i class="fa fa-edit"></i></a></td>
-                    </tr>
+                      <td>
+                    <!--Botão de detalhes do registro-->
+                        <a href="{{ route('item.show', $item) }}" class="btn btn-xs btn-primary">
+                            <i class="fas fa-fx fa-eye"></i>
+                        </a>
+                    <!--Botão de adição do registro-->
+                        <a href="{{ route('item.edit', $item->id) }}" class="btn btn-xs btn-warning">
+                            <i class="fas fa-fx fa-pencil-alt"></i>
+                        </a>
+                    <!--Botão de exclução do registro-->
+                        <form action="{{ route('item.destroy', $item) }}" method="post" onsubmit="return confirm('Voce tem certeza de que quer excluir este registro ?');"
+                        style="display: inline-block;">
+                            <input type="hidden" name="_method" value="DELETE">
+                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
-                    @endforeach
+                            <button type="submit" class="btn btn-xs btn-danger">
+                                <i class="fas fa-fx fa-trash-alt"></i>
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+                @endforeach
+            </tbody>
 
-                    <form action="/item/store" method="post">
-                         {{ csrf_field() }}
-                        <tr>
-                            <td></td>
-                            <td>
-                                <input type="text" name="titulo_prato" class="form-control">
-                            </td>
-                            <td>
-                                <input type="text" name="desc_prato" class="form-control">
-                            </td>
-                            <td>
-                                <input type="text" name="preco" class="form-control">
-                            </td>
-                            <td>
-                                <button type="submit" class="btn btn-primary btn-block btn-flat">
-                                   INCLUIR
-                                </button>
-                            </td>
-                        </tr>
+        </table>
 
 
-                    </form>
-                </tbody>
-            </table>
-        </div>
+    </div>
+
+
+</div>
+
 @stop
 
 @section('css')
-    <link rel="stylesheet" href="/css/admin_custom.css">
+@stop
+
+@section('js')
+<script>
+$(document).ready(function() {
+    $('#table-item').DataTable({
+        language: {
+            url: "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Portuguese-Brasil.json",
+        }
+    });
+} );
+</script>
 @stop

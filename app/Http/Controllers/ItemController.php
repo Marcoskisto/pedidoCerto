@@ -36,12 +36,9 @@ class ItemController extends Controller
      */
     public function store(Request $request)
     {
-       $service= Service::create([
-            "titulo_prato"=>$request->titulo_prato,
-            "desc_prato"=>$request->desc_prato,
-            "preco"=>$request->preco,
-       ]);
-       $service->save();
+        Item::create($request->all());
+        return redirect()->route('item.index');
+        return view('corretores.edit', compact('corretor'));
     }
 
     /**
@@ -63,7 +60,8 @@ class ItemController extends Controller
      */
     public function edit(Item $item)
     {
-        //
+        $item = Item::find($item->id);
+        return view('item.edit', compact('item'));
     }
 
     /**
@@ -75,7 +73,8 @@ class ItemController extends Controller
      */
     public function update(Request $request, Item $item)
     {
-        //
+        Item::save($request->all());
+        return redirect()->route('item.index');
     }
 
     /**
