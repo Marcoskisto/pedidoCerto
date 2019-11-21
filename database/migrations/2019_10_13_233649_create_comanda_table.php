@@ -16,6 +16,7 @@ class CreateComandaTable extends Migration
         Schema::create('comanda', function (Blueprint $table) {
             $table->increments('id');
             $table->string('numero_mesa',5);
+            $table->string('nome_cliente',5);
             $table->string('status',10);
             $table->timestamps();
         });
