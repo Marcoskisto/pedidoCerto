@@ -148,6 +148,11 @@ return [
                 'icon' => 'fas fa-book-open',
                 'route' => 'item.index'
         ],
+        [
+                'text' => 'Comandas',
+                'icon' => 'fas fa-edit',
+                'route' => 'item.index'
+        ],
         ['header' => 'labels'],
         [
             'text'       => 'important',
