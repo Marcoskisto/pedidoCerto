@@ -24,3 +24,4 @@ Route::get('/home', 'HomeController@index')->name('home');
 //Route::get('/item/store', 'ItemController@store')->name('item.store');
 
 Route::resource('item', 'ItemController');
+Route::resource('comanda', 'ComandaController');

@@ -151,7 +151,7 @@ return [
         [
                 'text' => 'Comandas',
                 'icon' => 'fas fa-edit',
-                'route' => 'item.index'
+                'route' => 'comanda.index'
         ],
         ['header' => 'labels'],
         [
