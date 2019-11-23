@@ -35,7 +35,7 @@
                         <td>{{$item->preco}}</td>
                       <td>
                     <!--Botão de detalhes do registro-->
-                        <a href="{{ route('item.show', $item) }}" class="btn btn-xs btn-primary">
+                        <a href="{{ route('item.show', $item->id) }}" class="btn btn-xs btn-primary">
                             <i class="fas fa-fx fa-eye"></i>
                         </a>
                     <!--Botão de adição do registro-->
@@ -43,7 +43,7 @@
                             <i class="fas fa-fx fa-pencil-alt"></i>
                         </a>
                     <!--Botão de exclução do registro-->
-                        <form action="{{ route('item.destroy', $item) }}" method="post" onsubmit="return confirm('Voce tem certeza de que quer excluir este registro ?');"
+                        <form action="{{ route('item.destroy', $item->id) }}" method="post" onsubmit="return confirm('Voce tem certeza de que quer excluir este registro ?');"
                         style="display: inline-block;">
                             <input type="hidden" name="_method" value="DELETE">
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">

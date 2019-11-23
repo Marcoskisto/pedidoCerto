@@ -153,6 +153,11 @@ return [
                 'icon' => 'fas fa-edit',
                 'route' => 'comanda.index'
         ],
+        [
+            'text' => 'Pedidos',
+            'icon' => 'glyphicon glyphicon-th-list',
+            'route' => 'pedido.index'
+    ],
         ['header' => 'labels'],
         [
             'text'       => 'important',

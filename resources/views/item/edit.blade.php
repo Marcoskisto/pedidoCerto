@@ -14,7 +14,7 @@
         </div>
 
        <div class="panel-body">
-          <form method="post" action="{{ route('item.update', $item) }}" enctype="multipart/form-data">
+          <form method="post" action="{{ route('item.update', $item->id) }}" enctype="multipart/form-data">
           {{ csrf_field() }}
           <input type="hidden" name="_method" value="PUT">
 

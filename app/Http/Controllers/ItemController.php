@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Item;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ItemController extends Controller
 {
@@ -38,7 +39,7 @@ class ItemController extends Controller
     {
         Item::create($request->all());
         return redirect()->route('item.index');
-        return view('corretores.edit', compact('corretor'));
+        return view('item.edit', compact('item'));
     }
 
     /**
@@ -47,9 +48,11 @@ class ItemController extends Controller
      * @param  \App\Item  $item
      * @return \Illuminate\Http\Response
      */
-    public function show(Item $item)
+    public function show($id)
     {
-        //
+        $item = Item::find($id);
+        // select * from corretor where id = $id;
+        return view('item.show', compact('item'));
     }
 
     /**
@@ -71,9 +74,17 @@ class ItemController extends Controller
      * @param  \App\Item  $item
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Item $item)
+    public function update(Request $request, $id)
     {
-        Item::save($request->all());
+        DB::table('item')
+            ->where('id', $id)
+            ->update(
+                [
+                    'titulo_prato' => $request->titulo_prato,
+                    'desc_prato' => $request->desc_prato,
+                    'preco' => $request->preco
+                ]
+            );
         return redirect()->route('item.index');
     }
 
@@ -83,8 +94,12 @@ class ItemController extends Controller
      * @param  \App\Item  $item
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Item $item)
+    public function destroy($id)
     {
-        //
+        Item::destroy($id);
+//        $item = item::all();
+
+        return redirect()->route('item.index');
+        //return view('item.index', compact('item'));
     }
 }

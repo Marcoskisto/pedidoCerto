@@ -2,21 +2,23 @@
 
 namespace App\Http\Controllers;
 
-use App\Comanda;
+use App\Pedido;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class ComandaController extends Controller
+
+class PedidoController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
+  
     public function index()
     {
-        $comandas = Comanda::all();
-        return view('comanda.index', compact('comandas'));
+        $pedido = Pedido::all();
+        return view('pedido.index',compact('pedidos'));
     }
 
     /**
@@ -26,7 +28,7 @@ class ComandaController extends Controller
      */
     public function create()
     {
-        return view('comanda.create');
+        return view('pedido.create');
     }
 
     /**
@@ -37,69 +39,70 @@ class ComandaController extends Controller
      */
     public function store(Request $request)
     {
-        Comanda::create($request->all());
-        return redirect()->route('comanda.index');
-        return view('comanda.edit', compact('comanda'));
+        pedido::create($request->all());
+        return redirect()->route('pedido.index');
+        return view('pedido.edit', compact('pedido'));
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Comanda  $comanda
+     * @param  \App\pedido  $pedido
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-        $comanda = Comanda::find($id);
+        $pedido = pedido::find($id);
         // select * from corretor where id = $id;
-        return view('comanda.show', compact('comanda'));
+        return view('pedido.show', compact('pedido'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Comanda  $comanda
+     * @param  \App\pedido  $pedido
      * @return \Illuminate\Http\Response
      */
-    public function edit(Comanda $comanda)
+    public function edit(pedido $pedido)
     {
-        $comanda = Comanda::find($comanda->id);
-        return view('comanda.edit', compact('comanda'));
+        $pedido = Pedido::find($pedido->id);
+        return view('pedido.edit', compact('pedido'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Comanda  $comanda
+     * @param  \App\pedido  $pedido
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
-        DB::table('comanda')
+        DB::table('pedido')
             ->where('id', $id)
             ->update(
                 [
-                    'numero_mesa' => $request->titulo_prato,
-                    'nome_cliente' => $request->desc_prato,
-                    'status' => $request->preco
+                    'id_comanda' => $request->id_comanda,
+                    'id_item' => $request->id_item,
+                    'quantidade' => $request->quantidade,
+                    'status' => $request->status
                 ]
             );
-        return redirect()->route('comanda.index');
+        return redirect()->route('pedido.index');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Comanda  $comanda
+     * @param  \App\pedido  $pedido
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        Comanda::destroy($id);
-//        $item = item::all();
+        pedido::destroy($id);
+//        $pedido = pedido::all();
 
-        return redirect()->route('comanda.index');
-        //return view('item.index', compact('item'));
+        return redirect()->route('pedido.index');
+        //return view('pedido.index', compact('pedido'));
     }
 }

@@ -25,3 +25,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('item', 'ItemController');
 Route::resource('comanda', 'ComandaController');
+Route::resource('pedido', 'PedidoController');
+
