@@ -53,7 +53,7 @@
                             </button>
                         </form>
                     <!--Botão de Incluir Pedido na Comanda-->
-                    <a href="{{ route('pedido.index', $comanda->id) }}" class="btn btn-xs btn-warning">
+                    <a href="{{ route('addpedido',$comanda->id) }}" class="btn btn-xs btn-warning" >
                             <i class="glyphicon glyphicon-cutlery"></i>
                         </a>
                     </td>

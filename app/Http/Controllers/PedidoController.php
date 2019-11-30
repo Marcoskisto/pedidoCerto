@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Pedido;
+use App\Comanda;
+use App\Item;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -26,9 +28,10 @@ class PedidoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($id)
     {
-        return view('pedido.create');
+        $comanda = Comanda::find($id);
+        return view('pedido.create',compact('comanda'));
     }
 
     /**
@@ -104,5 +107,12 @@ class PedidoController extends Controller
 
         return redirect()->route('pedido.index');
         //return view('pedido.index', compact('pedido'));
+    }
+
+    public function addPedido($id) {
+        $comanda = Comanda::find($id);
+        $item = Item::all();
+        return view('pedido.create',compact('comanda', 'item'));
+
     }
 }

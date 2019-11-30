@@ -3,7 +3,7 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-    <h1><i class="fas fa-fx fa-user"></i> Inclusao de Corretores</h1>
+    <h1><i class="fas fa-fx fa-user"></i> Inclusao de Itens</h1>
 @stop
 
 @section('content')

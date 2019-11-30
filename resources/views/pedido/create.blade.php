@@ -3,33 +3,42 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-    <h1><i class="fas fa-fx fa-user"></i> Nova Comanda</h1>
+    <h1><i class="fas fa-fx fa-user"></i> Novo Pedido</h1>
 @stop
 
 @section('content')
     <div class="panel panel-default">
         <div class="panel-heading">
-            <i class="fas fa-fx fa-user"></i> Tela de inclusão de nova comanda
+            <i class="fas fa-fx fa-user"></i> Tela de inclusão de Pedidos
         </div>
 
        <div class="panel-body">
-          <form method="post" action="{{ route('comanda.store') }}" enctype="multipart/form-data">
+          <form method="post" action="{{ route('pedido.store') }}" enctype="multipart/form-data">
           {{ csrf_field() }}
           <div class="form-group">
-               <label for="numero_mesa">Nº da Mesa <span class="text-red">*</span></label>
-               <input type="text" name="numero_mesa" id="numero_mesa" class="form-control">
+               <label for="numero_mesa">ID COMANDA <span class="text-red">*</span></label>
+               <input type="text" name="id_comanda" id="id_comanda" class="form-control" value="{{ $comanda->id }}">
+          </div>
+          <div class="form-group">
+               <label for="numero_mesa">ID ITEM <span class="text-red">*</span></label>
+               <!-- <input type="text" name="id_item" id="id_item" class="form-control"> -->
+               <select name="cardapio_id" id="cardapio_id" class="form-control">
+               @foreach($item as $it)
+                    <option value="{{ $it->id }}">{{ $it->titulo_prato }}</option>
+               @endforeach
+               </select>
           </div>
 
           <div class="form-group">
-               <label for="nome_cliente">Cliente <span class="text-red">*</span></label>
-               <input type="text" name="nome_cliente" id="nome_cliente" class="form-control">
+               <label for="nome_cliente">Quantidade <span class="text-red">*</span></label>
+               <input type="text" name="quantidade" id="quantidade" class="form-control">
           </div>
 
           <div class="form-group">
                <label for="status">Status</label>
                <input type="text" name="status" id="status" class="form-control">
           </div>
-         <a href="{{ route('comanda.index') }}" class="btn btn-default">
+         <a href="{{ route('pedido.index') }}" class="btn btn-default">
                <i class="fas fa-reply"></i> Voltar</a>
          <button type="submit" class="btn btn-success">
                <i class="fas fa-save"></i> Gravar
