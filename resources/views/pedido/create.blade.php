@@ -22,7 +22,7 @@
           <div class="form-group">
                <label for="numero_mesa">ID ITEM <span class="text-red">*</span></label>
                <!-- <input type="text" name="id_item" id="id_item" class="form-control"> -->
-               <select name="cardapio_id" id="cardapio_id" class="form-control">
+               <select name="id_item" id="id_item" class="form-control">
                @foreach($item as $it)
                     <option value="{{ $it->id }}">{{ $it->titulo_prato }}</option>
                @endforeach
@@ -34,10 +34,6 @@
                <input type="text" name="quantidade" id="quantidade" class="form-control">
           </div>
 
-          <div class="form-group">
-               <label for="status">Status</label>
-               <input type="text" name="status" id="status" class="form-control">
-          </div>
          <a href="{{ route('pedido.index') }}" class="btn btn-default">
                <i class="fas fa-reply"></i> Voltar</a>
          <button type="submit" class="btn btn-success">

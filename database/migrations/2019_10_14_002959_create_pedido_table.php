@@ -18,7 +18,7 @@ class CreatePedidoTable extends Migration
             $table->integer('id_comanda')->unsigned();
             $table->integer('id_item')->unsigned();
             $table->integer('quantidade')->unsigned()->nullable();
-            $table->string('status',10)->nullable();
+            $table->string('status',10)->default('PREPARACAO');
             $table->foreign('id_comanda')->references('id')->on('comanda')->onDelete('cascade');
             $table->foreign('id_item')->references('id')->on('item')->onDelete('cascade');
             $table->timestamps();

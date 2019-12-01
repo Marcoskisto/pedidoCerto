@@ -17,7 +17,7 @@ class CreateComandaTable extends Migration
             $table->increments('id');
             $table->string('numero_mesa',5);
             $table->string('nome_cliente',20);
-            $table->string('status',10);
+            $table->string('status',10)->default('ABERTA');
             $table->timestamps();
         });
     }

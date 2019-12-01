@@ -3,7 +3,7 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-    <h1><i class = "glyphicon glyphicon-menu-hamburger">pedidos Abertas</i></h1>
+    <h1><i class = "glyphicon glyphicon-menu-hamburger">Pedidos Abertos</i></h1>
 @stop
 
 @section('content')
@@ -12,7 +12,6 @@
             Relação de pedidos abertos
             <div class="pull-right">
                 <a href="{{ route('pedido.index') }}" class="btn btn-info"><i class="fas fa-sync"></i> Atualizar a tela</a>
-                <a href="{{ route('pedido.create') }}" class="btn btn-success"><i class="fas fa-plus"></i> Inserir nova pedido</a>
             </div>
         </div>
 
@@ -28,7 +27,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach($pedidos as $pedido)
+                   @foreach($pedidos as $pedido)
                     <tr>
                         <td>{{$pedido->id}}</td>
                         <td>{{$pedido->id_comanda}}</td>
@@ -54,13 +53,13 @@
                                 <i class="fas fa-fx fa-trash-alt"></i>
                             </button>
                         </form>
-                    <!--Botão de Incluir Pedido na pedido-->
-                    <a href="{{ route('pedido.create', $pedido->id) }}" class="btn btn-xs btn-warning">
-                            <i class="glyphicon glyphicon-cutlery"></i>
-                        </a>
-                    </td>
-                </tr>
-                @endforeach
+                        <!--Botão de Incluir Pedido na pedido-->
+                        <a href="{{ route('pedido.create', $pedido->id) }}" class="btn btn-xs btn-warning">
+                                <i class="glyphicon glyphicon-cutlery"></i>
+                            </a>
+                        </td>
+                    </tr>
+                    @endforeach
             </tbody>
 
         </table>

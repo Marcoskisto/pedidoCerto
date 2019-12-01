@@ -16,10 +16,10 @@ class PedidoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-  
+
     public function index()
     {
-        $pedido = Pedido::all();
+        $pedidos = Pedido::all();
         return view('pedido.index',compact('pedidos'));
     }
 

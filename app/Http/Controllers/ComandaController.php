@@ -52,7 +52,13 @@ class ComandaController extends Controller
     {
         $comanda = Comanda::find($id);
         // select * from corretor where id = $id;
-        return view('comanda.show', compact('comanda'));
+        $pedidos = DB::table('pedido')
+            ->join('item','pedido.id_item','=','item.id')
+            ->select('pedido.*','item.*')
+            ->get();
+        // select * pedidos da comanda $id
+
+        return view('comanda.show', compact('comanda'),compact('pedidos'));
     }
 
     /**
