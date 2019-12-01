@@ -55,6 +55,7 @@ class ComandaController extends Controller
         $pedidos = DB::table('pedido')
             ->join('item','pedido.id_item','=','item.id')
             ->select('pedido.*','item.*')
+            ->where('pedido.id_comanda',$id)
             ->get();
         // select * pedidos da comanda $id
 
