@@ -3,13 +3,13 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-<h1>Detalhes da comanda</h1>
+<h1>Detalhes da pedido</h1>
 @stop
 
 @section('content')
 <div class="panel panel-default">
     <div class="panel-heading">
-        Detalhes da Comanda
+        Pedidos Abertos
     </div>
 
     <div class="panel-body">
@@ -17,29 +17,29 @@
             <table class="table table-bordered table-hover table-striped">
                 <tr>
                     <td class="col-md-2">ID</td>
-                    <td class="col-md-10">{{ $comanda->id }}</td>
+                    <td class="col-md-10">{{ $pedido->id_comanda }}</td>
                 </tr>
 
                 <tr>
                     <td class="col-md-2">Número da Comanda</td>
-                    <td class="col-md-10">{{ $comanda->numero_mesa }}</td>
+                    <td class="col-md-10">{{ $pedido->id_item }}</td>
                 </tr>
 
                 <tr>
                     <td class="col-md-2">Nome do Cliente</td>
-                    <td class="col-md-10">{{ $comanda->nome_cliente }}</td>
+                    <td class="col-md-10">{{ $pedido->quantidade }}</td>
                 </tr>
 
                 <tr>
                     <td class="col-md-2">Status</td>
-                    <td class="col-md-10">{{ $comanda->status }}</td>
+                    <td class="col-md-10">{{ $pedido->status }}</td>
                 </tr>
             </table>
         </div>
     </div>
 
     <div class="panel-footer">
-        <a href="{{ route('comanda.index') }}" class="btn btn-default">
+        <a href="{{ route('pedido.index') }}" class="btn btn-default">
             <i class="fas fa-reply"></i> Voltar
         </a>
     </div>

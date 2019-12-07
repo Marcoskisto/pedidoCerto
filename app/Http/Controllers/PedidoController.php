@@ -115,4 +115,8 @@ class PedidoController extends Controller
         return view('pedido.create',compact('comanda', 'item'));
 
     }
+    public function statusPronto($id){
+        $pedido = Pedido::find($id);
+        $pedido->status = 'PRONTO';
+    }
 }

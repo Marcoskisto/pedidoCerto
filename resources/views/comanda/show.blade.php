@@ -78,9 +78,12 @@
                 </table>
         </div>
     </div>
-     <div class="panel-footer">
+     <div class="panel-footer" >
         <a href="{{ route('item.index') }}" class="btn btn-default">
             <i class="fas fa-reply"></i> Voltar
+        </a>
+        <a href="{{ route('addpedido',$comanda->id) }}" class="btn btn-default btn-danger">
+            <i class="fas fa-plus red"></i> Novo Pedido
         </a>
     </div>
 </div>

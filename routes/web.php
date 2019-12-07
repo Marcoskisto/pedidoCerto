@@ -27,4 +27,6 @@ Route::resource('item', 'ItemController');
 Route::resource('comanda', 'ComandaController');
 Route::get('pedido/addpedido/{id}', 'PedidoController@addPedido')->name('addpedido');
 Route::resource('pedido', 'PedidoController');
+Route::get('pedido/statusPronto/{id}', 'PedidoController@statusPronto')->name('statusPronto');
+
 

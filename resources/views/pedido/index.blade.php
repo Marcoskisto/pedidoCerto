@@ -39,9 +39,9 @@
                         <a href="{{ route('pedido.show', $pedido->id) }}" class="btn btn-xs btn-primary">
                             <i class="fas fa-fx fa-eye"></i>
                         </a>
-                    <!--Botão de adição do registro-->
-                        <a href="{{ route('pedido.edit', $pedido->id) }}" class="btn btn-xs btn-warning">
-                            <i class="fas fa-fx fa-pencil-alt"></i>
+                    <!--Botão de Status PRONTO do registro-->
+                        <a href="{{ route('pedido.statusPronto', $pedido->id) }}" class="btn btn-xs btn-success">
+                            <i class="fas fa-fx fa-check"></i>
                         </a>
                     <!--Botão de exclução do registro-->
                         <form action="{{ route('pedido.destroy', $pedido->id) }}" method="post" onsubmit="return confirm('Voce tem certeza de que quer excluir este registro ?');"
@@ -50,13 +50,10 @@
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
                             <button type="submit" class="btn btn-xs btn-danger">
-                                <i class="fas fa-fx fa-trash-alt"></i>
+                                <i class="fas fa-fx fa-ban"></i>
                             </button>
                         </form>
-                        <!--Botão de Incluir Pedido na pedido-->
-                        <a href="{{ route('pedido.create', $pedido->id) }}" class="btn btn-xs btn-warning">
-                                <i class="glyphicon glyphicon-cutlery"></i>
-                            </a>
+                 
                         </td>
                     </tr>
                     @endforeach
