@@ -54,12 +54,12 @@ class ComandaController extends Controller
         // select * from corretor where id = $id;
         $pedidos = DB::table('pedido')
             ->join('item','pedido.id_item','=','item.id')
-            ->select('pedido.*','item.*')
+            ->select('pedido.*','item.*',DB::raw('(item.preco*pedido.quantidade) as preco_total'))
             ->where('pedido.id_comanda',$id)
             ->get();
         // select * pedidos da comanda $id
-
-        return view('comanda.show', compact('comanda'),compact('pedidos'));
+        $total = $pedidos->sum('preco_total');
+        return view('comanda.show', compact('comanda'),compact('pedidos'),compact('item'))->with('total',$total);
     }
 
     /**

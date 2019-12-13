@@ -42,15 +42,20 @@
                             <td>ID PEDIDO</<td>
                             <td>PRATO</td>
                             <td>QUANTIDADE</td>
+                            <td>PREÇO UNIT</td>
+                            <td>PREÇO TOTAL</td>
                             <td>STATUS</td>
                         </tr>
                     </thead>
                     <tbody>
+
                        @foreach($pedidos as $pedido)
                         <tr>
                             <td>{{$pedido->id}}</td>
-                            <td>{{$pedido->desc_prato}}</td>
+                            <td>{{$pedido->titulo_prato}}</td>
                             <td>{{$pedido->quantidade}}</td>
+                            <td>{{$pedido->preco}}</td>
+                            <td>{{$pedido->preco_total}}</td>
                             <td>{{$pedido->status}}</td>
                           <td>
                         <!--Botão de edição do registro-->
@@ -67,23 +72,21 @@
                             <button type="submit" class="btn btn-xs btn-danger">
                             <i class="fas fa-ban"></i>
                             </button>
-
-
                             </form>
 
                             </td>
                         </tr>
+
                         @endforeach
                     </tbody>
+
                 </table>
+        <b>VALOR TOTAL = R$ {{$total}}</b>
         </div>
     </div>
-     <div class="panel-footer" >
+     <div class="panel-footer">
         <a href="{{ route('item.index') }}" class="btn btn-default">
             <i class="fas fa-reply"></i> Voltar
-        </a>
-        <a href="{{ route('addpedido',$comanda->id) }}" class="btn btn-default btn-danger">
-            <i class="fas fa-plus red"></i> Novo Pedido
         </a>
     </div>
 </div>
