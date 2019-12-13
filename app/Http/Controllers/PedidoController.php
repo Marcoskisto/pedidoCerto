@@ -43,7 +43,7 @@ class PedidoController extends Controller
     public function store(Request $request)
     {
         pedido::create($request->all());
-        return redirect()->route('pedido.index');
+        return redirect()->route('comanda.show',$request->id_comanda);
         return view('pedido.edit', compact('pedido'));
     }
 

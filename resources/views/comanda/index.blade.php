@@ -38,7 +38,7 @@
                         <a href="{{ route('comanda.show', $comanda->id) }}" class="btn btn-xs btn-primary">
                             <i class="fas fa-fx fa-eye"></i>
                         </a>
-                    <!--Botão de adição do registro-->
+                    <!--Botão de edição do registro-->
                         <a href="{{ route('comanda.edit', $comanda->id) }}" class="btn btn-xs btn-warning">
                             <i class="fas fa-fx fa-pencil-alt"></i>
                         </a>

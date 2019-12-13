@@ -9,7 +9,7 @@
 @section('content')
 <div class="panel panel-default">
     <div class="panel-heading">
-        COMANDA Nº {{$comanda->id  }}
+        COMANDA Nº {{$comanda->id}}
     </div>
 
     <div class="panel-body">
