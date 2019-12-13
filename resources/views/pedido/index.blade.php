@@ -40,7 +40,7 @@
                             <i class="fas fa-fx fa-eye"></i>
                         </a>
                     <!--Botão de Status PRONTO do registro-->
-                        <a href="{{ route('pedido.statusPronto', $pedido->id) }}" class="btn btn-xs btn-success">
+                        <a href="{{ route('statusPronto', $pedido->id) }}" class="btn btn-xs btn-success">
                             <i class="fas fa-fx fa-check"></i>
                         </a>
                     <!--Botão de exclução do registro-->
@@ -53,7 +53,7 @@
                                 <i class="fas fa-fx fa-ban"></i>
                             </button>
                         </form>
-                 
+
                         </td>
                     </tr>
                     @endforeach

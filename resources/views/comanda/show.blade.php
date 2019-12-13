@@ -85,8 +85,11 @@
         </div>
     </div>
      <div class="panel-footer">
-        <a href="{{ route('item.index') }}" class="btn btn-default">
+        <a href="{{ route('item.index') }}" class="btn btn-primary">
             <i class="fas fa-reply"></i> Voltar
+        </a>
+        <a href="{{ route('addpedido',$comanda->id) }}" class="btn btn-success" >
+            <i class="fas fa-plus"> </i> Add Pedido
         </a>
     </div>
 </div>

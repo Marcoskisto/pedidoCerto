@@ -143,6 +143,7 @@ return [
             'url'  => 'admin/settings',
             'icon' => 'fas fa-fw fa-lock',
         ],
+        ['header' => 'GESTÃO DO RESTAURANTE'],
         [
                 'text' => 'Cardápio',
                 'icon' => 'fas fa-book-open',
@@ -158,19 +159,7 @@ return [
             'icon' => 'glyphicon glyphicon-th-list',
             'route' => 'pedido.index'
     ],
-        ['header' => 'labels'],
-        [
-            'text'       => 'important',
-            'icon_color' => 'red',
-        ],
-        [
-            'text'       => 'warning',
-            'icon_color' => 'yellow',
-        ],
-        [
-            'text'       => 'information',
-            'icon_color' => 'aqua',
-        ],
+
     ],
 
     /*

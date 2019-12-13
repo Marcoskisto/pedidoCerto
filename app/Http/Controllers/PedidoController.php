@@ -116,7 +116,24 @@ class PedidoController extends Controller
 
     }
     public function statusPronto($id){
-        $pedido = Pedido::find($id);
-        $pedido->status = 'PRONTO';
+        DB::table('pedido')
+            ->where('id', $id)
+            ->update(
+                [
+                    'status' => 'PRONTO'
+                ]
+            );
+        return redirect()->route('pedido.index');
+    }
+
+    public function statusCancelado($id){
+        DB::table('pedido')
+            ->where('id', $id)
+            ->update(
+                [
+                    'status' => 'CANCELADO'
+                ]
+            );
+        return redirect()->route('pedido.index');
     }
 }
