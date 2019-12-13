@@ -3,16 +3,13 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-    <h1><i class = "glyphicon glyphicon-menu-hamburger">Pedidos Abertos</i></h1>
+    <h1>GESTÃO DE PEDIDOS</h1>
 @stop
 
 @section('content')
     <div class="panel panel-default">
         <div class="panel-heading clearfix">
-            Relação de pedidos abertos
-            <div class="pull-right">
-                <a href="{{ route('pedido.index') }}" class="btn btn-info"><i class="fas fa-sync"></i> Atualizar a tela</a>
-            </div>
+           <i class="fas fa-fire"></i> COZINHA (EM PREPARAÇÃO)
         </div>
 
         <div class="panel-body">
@@ -28,20 +25,21 @@
                 </thead>
                 <tbody>
                    @foreach($pedidos as $pedido)
+                   @if($pedido->status === 'PREPARACAO' )
                     <tr>
                         <td>{{$pedido->id}}</td>
                         <td>{{$pedido->id_comanda}}</td>
                         <td>{{$pedido->id_item}}</td>
                         <td>{{$pedido->quantidade}}</td>
-                        <td>{{$pedido->status}}</td>
+                        <td>{{$pedido->status}} <i class="far fa-play-circle"></i></td>
                       <td>
                     <!--Botão de detalhes do registro-->
                         <a href="{{ route('pedido.show', $pedido->id) }}" class="btn btn-xs btn-primary">
                             <i class="fas fa-fx fa-eye"></i>
                         </a>
-                    <!--Botão de Status PRONTO do registro-->
+                    <!--Botão de Status PRONTO do PEDIDO-->
                         <a href="{{ route('statusPronto', $pedido->id) }}" class="btn btn-xs btn-success">
-                            <i class="fas fa-fx fa-check"></i>
+                            <i class="fas fa-fx fa-check"></i> DESPACHAR P/ MESA
                         </a>
                     <!--Botão de exclução do registro-->
                         <form action="{{ route('pedido.destroy', $pedido->id) }}" method="post" onsubmit="return confirm('Voce tem certeza de que quer excluir este registro ?');"
@@ -50,20 +48,71 @@
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
                             <button type="submit" class="btn btn-xs btn-danger">
-                                <i class="fas fa-fx fa-ban"></i>
+                                <i class="fas fa-fx fa-ban"></i> EXCLUIR
                             </button>
                         </form>
 
                         </td>
                     </tr>
+                    @endif
                     @endforeach
-            </tbody>
+                </tbody>
 
-        </table>
-
+            </table>
+        </div>
 
     </div>
+    <div class="panel panel-default">
+        <div class="panel-heading clearfix">
+          <i class="far fa-bell"></i>  GARÇOM (PEDIDOS PRONTOS)
+        </div>
 
+        <div class="panel-body">
+            <table class="table table-striped table bordered table-hover" >
+                <thead>
+                    <tr>
+                        <td>ID</<td>
+                        <td>ID COMANDA</td>
+                        <td>ID ITEM</td>
+                        <td>Quantidade</td>
+                        <td>Status</td>
+                    </tr>
+                </thead>
+                <tbody>
+                   @foreach($pedidos as $pedido)
+                   @if($pedido->status === 'PRONTO' )
+                    <tr>
+                        <td>{{$pedido->id}}</td>
+                        <td>{{$pedido->id_comanda}}</td>
+                        <td>{{$pedido->id_item}}</td>
+                        <td>{{$pedido->quantidade}}</td>
+                        <td>{{$pedido->status}} <i class="far fa-check-circle"></i></td>
+                      <td>
+                    <!--Botão de detalhes do registro-->
+                        <a href="{{ route('pedido.show', $pedido->id) }}" class="btn btn-xs btn-primary">
+                            <i class="fas fa-fx fa-eye"></i>
+                        </a>
+                    <!--Botão de exclução do registro-->
+                        <form action="{{ route('pedido.destroy', $pedido->id) }}" method="post" onsubmit="return confirm('Voce tem certeza de que quer excluir este registro ?');"
+                        style="display: inline-block;">
+                            <input type="hidden" name="_method" value="DELETE">
+                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+
+                            <button type="submit" class="btn btn-xs btn-danger">
+                                <i class="fas fa-fx fa-ban"></i> EXCLUIR
+                            </button>
+                        </form>
+
+                        </td>
+                    </tr>
+                    @endif
+                    @endforeach
+                </tbody>
+
+            </table>
+        </div>
+
+    </div>
 
 </div>
 
