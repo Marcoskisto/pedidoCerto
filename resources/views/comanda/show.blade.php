@@ -59,20 +59,10 @@
                             <td>{{$pedido->status}}</td>
                           <td>
                         <!--Botão de edição do registro-->
-                            <a href="{{ route('pedido.edit', $pedido->id) }}" class="btn btn-xs btn-warning">
-                                <i class="fas fa-fx fa-pencil-alt"></i>
-                            </a>
+                           
 
                             <!--Botão de exclução do registro-->
-                            <form action="{{ route('pedido.destroy', $pedido->id) }}" method="post" onsubmit="return confirm('Voce tem certeza de que quer excluir este registro ?');"
-                            style="display: inline-block;">
-                            <input type="hidden" name="_method" value="DELETE">
-                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
-
-                            <button type="submit" class="btn btn-xs btn-danger">
-                            <i class="fas fa-ban"></i>
-                            </button>
-                            </form>
+                           
 
                             </td>
                         </tr>
@@ -90,6 +80,10 @@
         </a>
         <a href="{{ route('addpedido',$comanda->id) }}" class="btn btn-success" >
             <i class="fas fa-plus"> </i> Add Pedido
+        </a>
+
+        <a href="{{ route('pedido.index') }}" class="btn btn-info" >
+            <i class="fas fa-list"> </i> Gerenciar Pedidos
         </a>
     </div>
 </div>

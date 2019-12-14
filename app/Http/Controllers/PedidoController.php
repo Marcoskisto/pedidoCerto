@@ -100,9 +100,10 @@ class PedidoController extends Controller
      * @param  \App\pedido  $pedido
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($id_pedido)
     {
-        pedido::destroy($id);
+
+        Pedido::destroy($id_pedido);
 //        $pedido = pedido::all();
 
         return redirect()->route('pedido.index');
