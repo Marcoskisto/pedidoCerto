@@ -19,8 +19,18 @@ class PedidoController extends Controller
 
     public function index()
     {
-        $pedidos = Pedido::all();
+        //$pedidos = Pedido::all();
+        
+
+        $pedidos = DB::table('pedido')
+            ->join('item','pedido.id_item','=','item.id')
+            ->join('comanda','comanda.id','=','pedido.id_comanda')
+            ->select('pedido.*','item.*',DB::raw('(item.preco*pedido.quantidade) as preco_total'))
+         
+            ->get();
+        
         return view('pedido.index',compact('pedidos'));
+        //return view('comanda.show', compact('comanda'),compact('pedidos'),compact('item'))->with('total',$total);
     }
 
     /**

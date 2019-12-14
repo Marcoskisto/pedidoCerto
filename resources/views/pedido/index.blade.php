@@ -17,8 +17,8 @@
                 <thead>
                     <tr>
                         <td>ID</<td>
-                        <td>ID COMANDA</td>
-                        <td>ID ITEM</td>
+                        <td>COMANDA</td>
+                        <td>Prato</td>
                         <td>Quantidade</td>
                         <td>Status</td>
                     </tr>
@@ -29,14 +29,14 @@
                     <tr>
                         <td>{{$pedido->id}}</td>
                         <td>{{$pedido->id_comanda}}</td>
-                        <td>{{$pedido->id_item}}</td>
+                        <td>{{$pedido->titulo_prato}}</td>
                         <td>{{$pedido->quantidade}}</td>
                         <td>{{$pedido->status}} <i class="far fa-play-circle"></i></td>
                       <td>
-                    <!--Botão de detalhes do registro-->
+                    <!--Botão de detalhes do registro
                         <a href="{{ route('pedido.show', $pedido->id) }}" class="btn btn-xs btn-primary">
                             <i class="fas fa-fx fa-eye"></i>
-                        </a>
+                        </a>-->
                     <!--Botão de Status PRONTO do PEDIDO-->
                         <a href="{{ route('statusPronto', $pedido->id) }}" class="btn btn-xs btn-success">
                             <i class="fas fa-fx fa-check"></i> DESPACHAR P/ MESA
@@ -72,8 +72,8 @@
                 <thead>
                     <tr>
                         <td>ID</<td>
-                        <td>ID COMANDA</td>
-                        <td>ID ITEM</td>
+                        <td>COMANDA</td>
+                        <td>PRATO</td>
                         <td>Quantidade</td>
                         <td>Status</td>
                     </tr>
@@ -84,14 +84,15 @@
                     <tr>
                         <td>{{$pedido->id}}</td>
                         <td>{{$pedido->id_comanda}}</td>
-                        <td>{{$pedido->id_item}}</td>
+                        <td>{{$pedido->titulo_prato}}</td>
                         <td>{{$pedido->quantidade}}</td>
                         <td>{{$pedido->status}} <i class="far fa-check-circle"></i></td>
                       <td>
-                    <!--Botão de detalhes do registro-->
+                    <!--Botão de detalhes do registro
                         <a href="{{ route('pedido.show', $pedido->id) }}" class="btn btn-xs btn-primary">
                             <i class="fas fa-fx fa-eye"></i>
                         </a>
+                        -->
                     <!--Botão de exclução do registro-->
                         <form action="{{ route('pedido.destroy', $pedido->id) }}" method="post" onsubmit="return confirm('Voce tem certeza de que quer excluir este registro ?');"
                         style="display: inline-block;">
